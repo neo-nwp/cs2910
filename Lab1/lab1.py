@@ -33,8 +33,6 @@ def list_students():
 #2: Output list of all students sorted by name in ascending or reverse order
 def sort_students():
     students = read_csv(STUDENTS_FILE)
-    for i in students:
-        print(i)
     sorted_students = []
     if not students:
         print("No students found!")
@@ -165,6 +163,7 @@ def add_student_course_grade():
 #7: Update student info
 def update_student():
     students = read_csv(STUDENTS_FILE)
+    grades= read_csv(GRADES_FILE)
     student_id = input("Enter student ID: ").strip()
     for row in students:
         if row[0] == student_id:
@@ -174,6 +173,7 @@ def update_student():
             row[3] = input("Enter new phone: ").strip() or row[3]
             row[4] = input("Enter new email: ").strip() or row[4]
             write_csv(STUDENTS_FILE, students)
+            write_csv(GRADES_FILE, students)
             print("Student info updated successfully!")
             return
     print("Student ID not found!")
