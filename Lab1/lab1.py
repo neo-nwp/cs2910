@@ -173,7 +173,7 @@ def update_student():
             row[3] = input("Enter new phone: ").strip() or row[3]
             row[4] = input("Enter new email: ").strip() or row[4]
             write_csv(STUDENTS_FILE, students)
-            write_csv(GRADES_FILE, students)
+            write_csv(GRADES_FILE, grades)
             print("Student info updated successfully!")
             return
     print("Student ID not found!")
